@@ -44,6 +44,7 @@ final class Test {
 			public void onFail(Exception ex) {
 				System.out.print("    FAIL (");
 				System.out.print(ex.toString());
+				ex.printStackTrace();
 				System.out.println(")");
 			}
 		});
@@ -171,6 +172,14 @@ final class Test {
 			public void onTestEnd(CallTable calls) throws Exception {
 				calls.assertNext("let", new AddOperation(5), new AddOperation(3));
 				calls.assertNext("print", "8.0"); // use print to verify result
+				calls.assertEnd();
+			}
+		});
+		
+		tester.test("symbols inside a string", lines("note \"hello++\";"), new TestCriteria() {
+			@Override
+			public void onTestEnd(CallTable calls) throws Exception {
+				calls.assertNext("note", "hello++");
 				calls.assertEnd();
 			}
 		});
