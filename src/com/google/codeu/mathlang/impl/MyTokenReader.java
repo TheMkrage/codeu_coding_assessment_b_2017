@@ -27,20 +27,21 @@ import com.google.codeu.mathlang.parsing.TokenReader;
 // work with the test of the system.
 public final class MyTokenReader implements TokenReader {
 
-  public MyTokenReader(String source) {
-    // Your token reader will only be given a string for input. The string will
-    // contain the whole source (0 or more lines).
-  }
+	public MyTokenReader(String source) {
+		// Your token reader will only be given a string for input. The string will
+		// contain the whole source (0 or more lines).
+	}
 
-  @Override
-  public Token next() throws IOException {
-    // Most of your work will take place here. For every call to |next| you should
-    // return a token until you reach the end. When there are no more tokens, you
-    // should return |null| to signal the end of input.
+	@Override
+	public Token next() throws IOException {
+		// Most of your work will take place here. For every call to |next| you should
+		// return a token until you reach the end. When there are no more tokens, you
+		// should return |null| to signal the end of input.
 
-    // If for any reason you detect an error in the input, you may throw an IOException
-    // which will stop all execution.
+		// If for any reason you detect an error in the input, you may throw an
+		// IOException
+		// which will stop all execution.
 
-    return null;
-  }
+		return null;
+	}
 }
